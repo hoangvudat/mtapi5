@@ -231,7 +231,7 @@ namespace MtApi5TestClient
             }
         }
 
-        private string _chartFunctionsSymbolValue = "EURUSD";
+        private string _chartFunctionsSymbolValue = "BTCUSDm";
         public string ChartFunctionsSymbolValue
         {
             get { return _chartFunctionsSymbolValue; }
@@ -1060,40 +1060,40 @@ namespace MtApi5TestClient
 
         private async void ExecuteSymbolIsSynchronized(object o)
         {
-            var retVal = await Execute(() => _mtApiClient.SymbolIsSynchronized("EURUSD"));
-            AddLog("SymbolIsSynchronized(EURUSD): result = " + retVal);
+            var retVal = await Execute(() => _mtApiClient.SymbolIsSynchronized("BTCUSDm"));
+            AddLog("SymbolIsSynchronized(BTCUSDm): result = " + retVal);
         }
 
         private async void ExecuteSymbolInfoDouble(object o)
         {
-            var retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("EURUSD", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_BID));
-            AddLog($"SymbolInfoDouble(EURUSD, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_BID): result = {retVal}");
-            retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("EURUSD", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUME_REAL));
-            AddLog($"SymbolInfoDouble(EURUSD, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUME_REAL): result = {retVal}");
-            retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("EURUSD", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMEHIGH_REAL));
-            AddLog($"SymbolInfoDouble(EURUSD, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMEHIGH_REAL): result = {retVal}");
-            retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("EURUSD", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMELOW_REAL));
-            AddLog($"SymbolInfoDouble(EURUSD, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMELOW_REAL): result = {retVal}");
+            var retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("BTCUSDm", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_BID));
+            AddLog($"SymbolInfoDouble(BTCUSDm, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_BID): result = {retVal}");
+            retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("BTCUSDm", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUME_REAL));
+            AddLog($"SymbolInfoDouble(BTCUSDm, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUME_REAL): result = {retVal}");
+            retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("BTCUSDm", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMEHIGH_REAL));
+            AddLog($"SymbolInfoDouble(BTCUSDm, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMEHIGH_REAL): result = {retVal}");
+            retVal = await Execute(() => _mtApiClient.SymbolInfoDouble("BTCUSDm", ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMELOW_REAL));
+            AddLog($"SymbolInfoDouble(BTCUSDm, ENUM_SYMBOL_INFO_DOUBLE.SYMBOL_VOLUMELOW_REAL): result = {retVal}");
         }
 
         private async void ExecuteSymbolInfoInteger(object o)
         {
-            var retVal = await Execute(() => _mtApiClient.SymbolInfoInteger("EURUSD", ENUM_SYMBOL_INFO_INTEGER.SYMBOL_SPREAD));
-            AddLog($"SymbolInfoInteger(EURUSD, ENUM_SYMBOL_INFO_INTEGER.SYMBOL_SPREAD): result = {retVal}");
+            var retVal = await Execute(() => _mtApiClient.SymbolInfoInteger("BTCUSDm", ENUM_SYMBOL_INFO_INTEGER.SYMBOL_SPREAD));
+            AddLog($"SymbolInfoInteger(BTCUSDm, ENUM_SYMBOL_INFO_INTEGER.SYMBOL_SPREAD): result = {retVal}");
         }
 
         private async void ExecuteSymbolInfoString(object o)
         {
-            var retVal = await Execute(() => _mtApiClient.SymbolInfoString("EURUSD", ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION));
-            AddLog($"SymbolInfoString(EURUSD, ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION): result = {retVal}");
+            var retVal = await Execute(() => _mtApiClient.SymbolInfoString("BTCUSDm", ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION));
+            AddLog($"SymbolInfoString(BTCUSDm, ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION): result = {retVal}");
         }
 
         private async void ExecuteSymbolInfoString2(object o)
         {
             string stringVar = null;
 
-            var retVal = await Execute(() => _mtApiClient.SymbolInfoString("EURUSD", ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION, out stringVar));
-            AddLog($"SymbolInfoString-2 (EURUSD, ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION): result = {retVal}, stringVar = {stringVar}");
+            var retVal = await Execute(() => _mtApiClient.SymbolInfoString("BTCUSDm", ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION, out stringVar));
+            AddLog($"SymbolInfoString-2 (BTCUSDm, ENUM_SYMBOL_INFO_STRING.SYMBOL_DESCRIPTION): result = {retVal}, stringVar = {stringVar}");
         }
 
         private async void ExecuteSymbolInfoTick(object o)
@@ -1101,18 +1101,18 @@ namespace MtApi5TestClient
             var result = await Execute(() =>
             {
                 MqlTick tick;
-                var ok = _mtApiClient.SymbolInfoTick("EURUSD", out tick);
+                var ok = _mtApiClient.SymbolInfoTick("BTCUSDm", out tick);
                 return ok ? tick : null;
             });
 
             if (result == null) return;
-            AddLog("SymbolInfoTick(EURUSD) success");
-            AddLog($"SymbolInfoTick(EURUSD) tick.time = {result.time}");
-            AddLog($"SymbolInfoTick(EURUSD) tick.bid = {result.bid}");
-            AddLog($"SymbolInfoTick(EURUSD) tick.ask = {result.ask}");
-            AddLog($"SymbolInfoTick(EURUSD) tick.last = {result.last}");
-            AddLog($"SymbolInfoTick(EURUSD) tick.volume = {result.volume}");
-            AddLog($"SymbolInfoTick(EURUSD) tick.volume_real = {result.volume_real}");
+            AddLog("SymbolInfoTick(BTCUSDm) success");
+            AddLog($"SymbolInfoTick(BTCUSDm) tick.time = {result.time}");
+            AddLog($"SymbolInfoTick(BTCUSDm) tick.bid = {result.bid}");
+            AddLog($"SymbolInfoTick(BTCUSDm) tick.ask = {result.ask}");
+            AddLog($"SymbolInfoTick(BTCUSDm) tick.last = {result.last}");
+            AddLog($"SymbolInfoTick(BTCUSDm) tick.volume = {result.volume}");
+            AddLog($"SymbolInfoTick(BTCUSDm) tick.volume_real = {result.volume_real}");
         }
 
         private async void ExecuteSymbolInfoSessionQuote(object o)
@@ -1121,16 +1121,16 @@ namespace MtApi5TestClient
             {
                 DateTime from;
                 DateTime to;
-                var ok = _mtApiClient.SymbolInfoSessionQuote("EURUSD", ENUM_DAY_OF_WEEK.MONDAY, 0, out from, out to);
+                var ok = _mtApiClient.SymbolInfoSessionQuote("BTCUSDm", ENUM_DAY_OF_WEEK.MONDAY, 0, out from, out to);
                 if (ok)
                 {
-                    AddLog($"SymbolInfoSessionQuote(EURUSD) from = {from}");
-                    AddLog($"SymbolInfoSessionQuote(EURUSD) to = {to}");
+                    AddLog($"SymbolInfoSessionQuote(BTCUSDm) from = {from}");
+                    AddLog($"SymbolInfoSessionQuote(BTCUSDm) to = {to}");
                 }
                 return ok;
             });
 
-            AddLog($"SymbolInfoSessionQuote(EURUSD): result = {retVal}");
+            AddLog($"SymbolInfoSessionQuote(BTCUSDm): result = {retVal}");
 
         }
 
@@ -1140,28 +1140,28 @@ namespace MtApi5TestClient
             {
                 DateTime from;
                 DateTime to;
-                var ok = _mtApiClient.SymbolInfoSessionTrade("EURUSD", ENUM_DAY_OF_WEEK.MONDAY, 0, out from, out to);
+                var ok = _mtApiClient.SymbolInfoSessionTrade("BTCUSDm", ENUM_DAY_OF_WEEK.MONDAY, 0, out from, out to);
                 if (ok)
                 {
-                    AddLog($"SymbolInfoSessionTrade(EURUSD) from = {from}");
-                    AddLog($"SymbolInfoSessionTrade(EURUSD) to = {to}");
+                    AddLog($"SymbolInfoSessionTrade(BTCUSDm) from = {from}");
+                    AddLog($"SymbolInfoSessionTrade(BTCUSDm) to = {to}");
                 }
                 return ok;
             });
 
-            AddLog("SymbolInfoSessionTrade(EURUSD): result = " + retVal);
+            AddLog("SymbolInfoSessionTrade(BTCUSDm): result = " + retVal);
         }
 
         private async void ExecuteMarketBookAdd(object o)
         {
-            var retVal = await Execute(() => _mtApiClient.MarketBookAdd("EURUSD"));
-            AddLog($"MarketBookAdd(EURUSD): result = {retVal}");
+            var retVal = await Execute(() => _mtApiClient.MarketBookAdd("BTCUSDm"));
+            AddLog($"MarketBookAdd(BTCUSDm): result = {retVal}");
         }
 
         private async void ExecuteMarketBookRelease(object o)
         {
-            var retVal = await Execute(() => _mtApiClient.MarketBookRelease("EURUSD"));
-            AddLog($"MarketBookRelease(EURUSD): result = {retVal}");
+            var retVal = await Execute(() => _mtApiClient.MarketBookRelease("BTCUSDm"));
+            AddLog($"MarketBookRelease(BTCUSDm): result = {retVal}");
         }
 
         private async void ExecuteMarketBookGet(object o)
@@ -1169,17 +1169,17 @@ namespace MtApi5TestClient
             var result = await Execute(() =>
             {
                 MqlBookInfo[] book;
-                var ok = _mtApiClient.MarketBookGet("EURUSD", out book);
+                var ok = _mtApiClient.MarketBookGet("BTCUSDm", out book);
                 return ok ? book : null;
             });
 
             if (result == null)
             {
-                AddLog("MarketBookGet(EURUSD): result is null");
+                AddLog("MarketBookGet(BTCUSDm): result is null");
                 return;
             }
 
-            AddLog($"MarketBookGet(EURUSD): success. Count = {result.Length}");
+            AddLog($"MarketBookGet(BTCUSDm): success. Count = {result.Length}");
 
             for (var i = 0; i < result.Length; i++)
             {
@@ -1189,7 +1189,7 @@ namespace MtApi5TestClient
 
         private async void ExecutePositionOpen(object obj)
         {
-            const string symbol = "EURUSD";
+            const string symbol = "BTCUSDm";
             const ENUM_ORDER_TYPE orderType = ENUM_ORDER_TYPE.ORDER_TYPE_BUY;
             const double volume = 0.1;
             const double price = 1.18129;
@@ -1199,7 +1199,7 @@ namespace MtApi5TestClient
             MqlTradeResult tradeResult = null;
 
             var retVal = await Execute (() => _mtApiClient.PositionOpen(symbol, orderType, volume, price, sl, tp, comment, out tradeResult));
-            AddLog($"PositionOpen: symbol EURUSD retVal = {retVal}, result = {tradeResult}");
+            AddLog($"PositionOpen: symbol BTCUSDm retVal = {retVal}, result = {tradeResult}");
         }
 
         private async void ExecutePositionClose(object obj)
@@ -1219,22 +1219,22 @@ namespace MtApi5TestClient
 
         private async void ExecuteBuy(object obj)
         {
-            const string symbol = "EURUSD";
+            const string symbol = "BTCUSDm";
             const double volume = 0.1;
             MqlTradeResult tradeResult = null;
 
             var retVal = await Execute(() => _mtApiClient.Buy(out tradeResult, volume, symbol));
-            AddLog($"Buy: symbol EURUSD retVal = {retVal}, result = {tradeResult}");
+            AddLog($"Buy: symbol BTCUSDm retVal = {retVal}, result = {tradeResult}");
         }
 
         private async void ExecuteSell(object obj)
         {
-            const string symbol = "EURUSD";
+            const string symbol = "BTCUSDm";
             const double volume = 0.1;
             MqlTradeResult tradeResult = null;
 
             var retVal = await Execute(() => _mtApiClient.Sell(out tradeResult, volume, symbol));
-            AddLog($"Sell: symbol EURUSD retVal = {retVal}, result = {tradeResult}");
+            AddLog($"Sell: symbol BTCUSDm retVal = {retVal}, result = {tradeResult}");
         }
 
         private async void ExecutePrint(object obj)
